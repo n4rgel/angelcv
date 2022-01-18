@@ -1,0 +1,7 @@
+{
+  "name": "angelcv",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "angelcv",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}
