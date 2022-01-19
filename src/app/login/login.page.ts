@@ -20,6 +20,8 @@ export class LoginPage implements OnInit {
   async LogIn(){
     const user= await this.ngFireAuth.signInWithEmailAndPassword(this.user.email,this.user.password);
     if(user.user.email){
+      console.log(user)
+      
       this.router.navigate(['/home']);
     }else{
       alert("Login Failed");
@@ -29,6 +31,7 @@ export class LoginPage implements OnInit {
     const user= await this.ngFireAuth.createUserWithEmailAndPassword(this.user.email,this.user.password);
     if(user.user.email){
       alert("Register Success");
+      console.log(user)
       this.router.navigate(['/home']);
     }else{
       alert("Registration Failed");
