@@ -15,7 +15,5 @@ export class HomePage implements OnInit {
     console.log(datajson);
     this.data = datajson;
   }
-  LogIn(){
-    this.router.navigate(['/login']);
-  }
+ 
 }

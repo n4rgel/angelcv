@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import firebase from 'firebase/compat/app';
+import 'firebase/compat/auth';
+import 'firebase/compat/firestore';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -37,5 +40,16 @@ export class LoginPage implements OnInit {
       alert("Registration Failed");
     }
   }
+  async GoogleLog(){
+    const user= await this.ngFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); 
+    if(user.user.email){
+      alert("Login Success");
+      console.log(user)
+      this.router.navigate(['/home']);
+    }else{
+      alert("Login Failed");
+    }
+  }
+  
 
 }

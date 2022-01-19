@@ -19,12 +19,17 @@
         <ion-input [(ngModel)]="user.password" placeholder="Password" type="password"></ion-input>
       </ion-item>
       <br>
-      <ion-button (click)="LogIn()">
-       Login 
-      </ion-button>
-      <ion-button (click)="Register()">
-        Register 
-       </ion-button>
+      <ion-grid>
+        <ion-button (click)="LogIn()">
+        Login 
+        </ion-button>
+        <ion-button (click)="Register()">
+          Register 
+        </ion-button>
+        <ion-button  (click)="GoogleLog()">
+          Login with Google <ion-icon color="#DB4437" name="logo-google"></ion-icon> 
+        </ion-button>
+      </ion-grid>
     </ion-card-content>
   </ion-card>
 </ion-content>
