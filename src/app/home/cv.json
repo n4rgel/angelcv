@@ -1,0 +1,18 @@
+{
+    "En_cv": [],
+    "Es_cv": [
+        {
+            "title":"Experiencia",
+            "subtitle":"Experiencia laboral",
+            "content":"Muchas cositas muy experimentadas y muy laborales",
+            "img":"assets/imgs/exper.jpg"
+        },
+        {
+            "title":"Estudios",
+            "subtitle":"Estudios",
+            "content":"me he jartado de estudiar",
+            "img":"assets/imgs/studi.jpg"
+        }
+    ],
+    "Norsk-cv": []
+}
