@@ -13,6 +13,13 @@
             "content":"me he jartado de estudiar",
             "img":"assets/imgs/studi.jpg"
         }
+        ,
+        {
+            "title":"Idiomas",
+            "subtitle":"Idiomas",
+            "content":"<ion-row><div class='centrado'><img src= 'assets/imgs/flags/spain.png'/><b class='flagtext'> Español (Lengua materna)</b></div><br><div class='centrado'><img src= 'assets/imgs/flags/engelsk.png'/><b class='flagtext'> Inglés (B2)</b></div><br><div class='centrado'><img src= 'assets/imgs/flags/norsk.png'/><b class='flagtext'> Noruego (A2)</b></div></ion-row>",
+            "img":"assets/imgs/idiomas.jpg"
+        }
     ],
     "Norsk-cv": []
 }

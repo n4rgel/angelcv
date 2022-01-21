@@ -25,3 +25,13 @@
 #container a {
   text-decoration: none;
 }
+
+::ng-deep{
+  .centrado{
+    vertical-align: middle;
+  }
+  .flagtext{
+    position: absolute;
+    margin-top: 15px;
+  }
+}
