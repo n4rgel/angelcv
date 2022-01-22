@@ -1,34 +1,30 @@
 import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
 
-import { Storage } from '@ionic/storage-angular';
 @Injectable({
   providedIn: 'root'
 })
 export class AllringService {
-  private _storage: Storage | null = null;
-  constructor(private storage: Storage) { 
-    this.init();
+
+  user:any=null;
+  constructor(public ngFireAuth: AngularFireAuth) { 
+    this.user=null;
   }
 
-  async init() {
-    const storage = await this.storage.create();
-    this._storage = storage;
-    console.log("service init")
+  ngOnInit() {
+    
   }
   setloged(user){
-    if(user!=null){
-      this._storage.set('user',user);
-    }
-  }
-  isloged(){
-    
-    console.log("is loged")
-    return (this._storage.get("user"))!=null;
-    console.log("is loged nf")
+      this.user=user;
     
   }
-  getUser(){
-    return this._storage.get("user")
+   isloged(){
+    //return this.ngFireAuth.user!=null;
+    return this.user!=null
+    
+  }
+   getUser(){
+    return this.user;
   }
   havePermission(){}
 }

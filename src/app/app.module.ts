@@ -6,11 +6,11 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
-import { AngularFireModule} from '@angular/fire/compat'
+import { AngularFireModule,} from '@angular/fire/compat'
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 
 import { environment } from '../environments/environment';
-import { IonicStorageModule } from '@ionic/storage-angular';
+import { AllringService } from './services/allring.service';
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
@@ -18,10 +18,9 @@ import { IonicStorageModule } from '@ionic/storage-angular';
      IonicModule.forRoot(),
      AppRoutingModule,
      AngularFireModule.initializeApp(environment.firebase),
-     AngularFireAuthModule,
-     IonicStorageModule.forRoot()
+     AngularFireAuthModule
      ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy }],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },AllringService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

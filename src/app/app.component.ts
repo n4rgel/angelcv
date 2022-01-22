@@ -1,25 +1,26 @@
 import { AllringService } from './services/allring.service';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Storage } from '@ionic/storage-angular';
 @Component({
   selector: 'app-root',
   templateUrl: 'app.component.html',
   styleUrls: ['app.component.scss'],
 })
-export class AppComponent {
-  constructor(private router: Router,public ngFireAuth: AngularFireAuth,private allring:AllringService,private storage: Storage) {
+export class AppComponent implements OnInit {
+  public loged:boolean=false;
+  constructor(private router: Router,public ngFireAuth: AngularFireAuth,private allring:AllringService) {
     
   }
-  async ngOnInit() {
-    //await this.storage.create();
+  ngOnInit() {
+    this.loged=  this.allring.isloged()
   }
   LogIn(){
     this.router.navigate(['/login']);
   }
   LogOut(){
     this.ngFireAuth.signOut();
+    this.allring.setloged(null);
   }
   isloged(){
     return this.allring.isloged();

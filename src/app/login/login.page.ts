@@ -1,5 +1,5 @@
 import { AllringService } from './../services/allring.service';
-import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
@@ -12,23 +12,23 @@ import 'firebase/compat/firestore';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class LoginPage implements OnInit, OnChanges{
 
   public user:any;
-
+  public loged:boolean=false;
   constructor(private router: Router, public ngFireAuth: AngularFireAuth, public allring:AllringService) { }
 
 
   ngOnInit() {
-    
+    this.loged= this.allring.isloged();
     this.user=this.allring.getUser();
   }
-
+  ngOnChanges() {
+  }
   async GoogleLog(){
     const user= await this.ngFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); 
     if(user.user.email){
       this.allring.setloged(user.user);
-      console.log(user.user);
       this.router.navigate(['/home']);
     }else{
       alert("Login Failed");
