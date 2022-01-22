@@ -2,23 +2,33 @@
     "En_cv": [],
     "Es_cv": [
         {
+            "title":"Información personal",
+            "subtitle":"Información personal y de contacto",
+            "content":"Para acceder a esta información, debe iniciar sesión y solicitar el acceso a esta información. Si ya tiene acceso a esta información con iniciar sesión podrá ver los datos.",
+            "img":"assets/imgs/personalinfo.jpg",
+            "goto":"/personalInfo"
+        },
+        {
             "title":"Experiencia",
             "subtitle":"Experiencia laboral",
             "content":"Muchas cositas muy experimentadas y muy laborales",
-            "img":"assets/imgs/exper.jpg"
+            "img":"assets/imgs/exper.jpg",
+            "goto":"none"
         },
         {
             "title":"Estudios",
             "subtitle":"Estudios",
             "content":"me he jartado de estudiar",
-            "img":"assets/imgs/studi.jpg"
+            "img":"assets/imgs/studi.jpg",
+            "goto":"none"
         }
         ,
         {
             "title":"Idiomas",
             "subtitle":"Idiomas",
             "content":"<ion-row><div class='centrado'><img src= 'assets/imgs/flags/spain.png'/><b class='flagtext'> Español (Lengua materna)</b></div><br><div class='centrado'><img src= 'assets/imgs/flags/engelsk.png'/><b class='flagtext'> Inglés (B2)</b></div><br><div class='centrado'><img src= 'assets/imgs/flags/norsk.png'/><b class='flagtext'> Noruego (A2)</b></div></ion-row>",
-            "img":"assets/imgs/idiomas.jpg"
+            "img":"assets/imgs/idiomas.jpg",
+            "goto":"none"
         }
     ],
     "Norsk-cv": []

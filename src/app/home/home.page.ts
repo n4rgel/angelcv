@@ -15,5 +15,10 @@ export class HomePage implements OnInit {
     console.log(datajson);
     this.data = datajson;
   }
- 
+  goto(page){
+    if (page=="/personalInfo"){
+      this.router.navigate(['/personalInfo']);
+    }
+    this.router.navigate([page]);
+  }
 }

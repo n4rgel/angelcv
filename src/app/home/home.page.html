@@ -15,8 +15,8 @@
           <ion-card-title>{{item.subtitle}}</ion-card-title>
         </ion-card-header>
     
-        <ion-card-content>
-          <div [innerHTML]="item.content" ></div>
+        <ion-card-content (click)="goto(item.goto)">
+          <div [innerHTML]="item.content" class=".contenido" ></div>
         </ion-card-content>
     </ion-card>
   </ion-grid>

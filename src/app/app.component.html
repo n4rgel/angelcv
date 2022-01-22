@@ -5,10 +5,13 @@
       <ion-icon md="caret-down" ios="chevron-down-circle-outline"></ion-icon>
     </ion-fab-button>
     <ion-fab-list side="down">
-      <ion-fab-button color="light"  (click)="LogIn()">
+      <ion-fab-button *ngIf="!isloged()" color="light"  (click)="LogIn()">
         <ion-icon name="enter"></ion-icon>
       </ion-fab-button>
-      <ion-fab-button color="light"  (click)="LogOut()">
+      <ion-fab-button *ngIf="isloged()" color="light"  (click)="LogIn()">
+        <ion-icon name="person"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button *ngIf="isloged()" color="light"  (click)="LogOut()">
         <ion-icon name="log-out"></ion-icon>
       </ion-fab-button>
     </ion-fab-list>
