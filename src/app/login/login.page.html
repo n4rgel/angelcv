@@ -8,15 +8,30 @@
   <ion-card>
     <ion-card-header>
       <img src="assets/imgs/login_card.jpg" />
-      <ion-card-title>Login</ion-card-title>
+      <ion-card-title *ngIf="!isloged()">Login</ion-card-title>
+      <ion-card-title *ngIf="isloged()">Mi perfil</ion-card-title>
     </ion-card-header>
 
     <ion-card-content>
-      <ion-grid>
+      <ion-grid *ngIf="!isloged()">
         <ion-button  (click)="GoogleLog()">
           Login with Google <ion-icon color="#DB4437" name="logo-google"></ion-icon> 
         </ion-button>
       </ion-grid>
+      <ion-grid class="item" *ngIf="isloged() && user!=null">
+        <div class="item2">
+          <img class="avatar" src="{{user.photoURL}}" />
+        </div>
+        <br>
+        <div class="item2">
+          <h2>{{user.displayName}}</h2>
+        </div>
+        <br>
+        <div class="item2">
+          <p>{{user.email}}</p>
+        </div>
+      </ion-grid>
+
     </ion-card-content>
   </ion-card>
 </ion-content>
