@@ -29,7 +29,7 @@ export class LoginPage implements OnInit, OnChanges{
     const user= await this.ngFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); 
     if(user.user.email){
       this.allring.setloged(user.user);
-      this.router.navigate(['/home']);
+      this.gohome();
     }else{
       alert("Login Failed");
     }
@@ -37,6 +37,8 @@ export class LoginPage implements OnInit, OnChanges{
   isloged(){
     return this.allring.isloged();
   }
-  
+  gohome(){
+    this.router.navigate(['/home']);
+  }
 
 }

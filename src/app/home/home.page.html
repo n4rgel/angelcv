@@ -8,14 +8,14 @@
 
 <ion-content padding>
   <ion-grid>
-    <ion-card *ngFor="let item of data.Es_cv; index as i">
+    <ion-card (click)="goto(item.goto)" *ngFor="let item of data.Es_cv; index as i">
         <ion-card-header>
           <img src= {{item.img}}/>
           <ion-card-subtitle>{{item.title}}</ion-card-subtitle>
           <ion-card-title>{{item.subtitle}}</ion-card-title>
         </ion-card-header>
     
-        <ion-card-content (click)="goto(item.goto)">
+        <ion-card-content >
           <div [innerHTML]="item.content" class=".contenido" ></div>
         </ion-card-content>
     </ion-card>
