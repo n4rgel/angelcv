@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { AngularFireAuthGuard } from '@angular/fire/compat/auth-guard';
-
+import { AuthGuard } from './services/auth-guard.service';
 const routes: Routes = [
   {
     path: 'home',
@@ -19,7 +19,7 @@ const routes: Routes = [
   {
     path: 'personalInfo',
     loadChildren: () => import('./personal-info/personal-info.module').then( m => m.PersonalInfoPageModule),
-    canActivate: [AngularFireAuthGuard] 
+    canActivate: [AuthGuard] 
   },
 ];
 

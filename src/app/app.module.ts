@@ -1,3 +1,4 @@
+import { AuthGuard } from './services/auth-guard.service';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouteReuseStrategy } from '@angular/router';
@@ -20,7 +21,8 @@ import { AllringService } from './services/allring.service';
      AngularFireModule.initializeApp(environment.firebase),
      AngularFireAuthModule
      ],
-  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },AllringService],
+  providers: [{ provide: RouteReuseStrategy, useClass: IonicRouteStrategy },AllringService,
+  AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
