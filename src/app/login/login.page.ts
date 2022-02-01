@@ -5,8 +5,7 @@ import { AngularFireAuth } from '@angular/fire/compat/auth';
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
-
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -28,6 +27,11 @@ export class LoginPage implements OnInit, OnChanges{
   async GoogleLog(){
     const user= await this.ngFireAuth.signInWithPopup(new firebase.auth.GoogleAuthProvider()); 
     if(user.user.email){
+      const uid=user.user.uid;
+      const userDocRef = firebase.firestore().collection('users').doc(uid)
+      await userDocRef.set ({ 
+        allowed: false 
+      }) 
       this.allring.setloged(user.user);
       this.gohome();
     }else{
